@@ -111,7 +111,7 @@ span{
 }
 
 .navlist a:hover{
-    color: var(--select-color);
+    color: var(--text-color);
     text-shadow:0 0 10px rgba(101, 202, 47, 0.3),
     0 0 20px rgba(101, 202, 47, 0.3),
     0 0 30px rgba(101, 202, 47, 0.3),
@@ -138,7 +138,6 @@ section{
     padding-top: 20px;
     padding: 100px 10%;
 }
-
 
 /*! refer too if displaying incorrectly */
 .home{
@@ -286,7 +285,7 @@ margin: 1rem 0 2rem;
     height: 45px;
 }
 /* button glow */
-.btn-box a.btn {
+.btn-box a.btn{
     background: var(--hover-color);
     color: var(--bg-color);
     width: 150px;
@@ -306,12 +305,20 @@ margin: 1rem 0 2rem;
     border: 2px solid var(--hover-color);
 }
 
-a.btn:hover {
+a.btn:hover{
     box-shadow: 0 0 15px rgba(101, 202, 47, 0.8), 0 0 30px rgba(101, 202, 47, 0.6);
 }
 
 a.btn#hire-me:hover{
-    color: #65ca2f;
+    color: var(--bg-color);
+}
+
+a.btn#download-cv:hover{
+    color: var(--hover-color);
+}
+
+a.btn#read-more:hover{
+    color: var(--hover-color);
 }
 
 a.btn::before {
@@ -437,7 +444,7 @@ a.btn:nth-child(2)::before{
 
 
 
-/* --- About Section --- */
+/* --- About segment --- */
 .about{
     display: flex;
     justify-content: center;
@@ -526,37 +533,38 @@ a.btn:nth-child(2)::before{
     grid-row-gap: 30px;
     grid-column-gap: 290px;
 }
-.skill-left, .skill-right {
+
+.skill-left, .skill-right{
     width: 100%;
-    overflow-wrap: break-word; /* Ensures text wraps within its container */
+    overflow-wrap: break-word; /* ensures text wraps within its container */
     word-wrap: break-word;
     hyphens: auto; /* adds hyphens when words are broken */
 }
 
-.skill-bar {
+.skill-bar{
     width: 100%;
 }
 
-.bar {
-    background-color: white; /* Background color for the incomplete part */
+.bar{
+    background-color: white; /* background color for the incomplete part */
     border-radius: 5px; 
     height: 10px; 
     position: relative;
-    width: 100%; /* Ensures all bars occupy the same width */
+    width: 100%; /* ensures all bars occupy the same width */
 }
 
-.bar span {
+.bar span{
     display: block; 
     height: 100%; 
-    background-color: var(--hover-color); /* Color of the progress */
+    background-color: var(--hover-color); /* color of the progress */
     border-radius: 5px; 
     position: absolute; 
-    left: 0; /* Start from the left */
-    transition: width 0.5s ease; /* Optional: smooth transition effect */
+    left: 0; 
+    transition: width 0.5s ease; /* smooth transition effect */
     box-shadow: 0 0 10px rgba(101, 202, 47, 0.6);
 }
 
-/* Set the width for each skill bar */
+/* width for each skill bar */
 .skill-bar .bar span[data-skill="html"] {
     width: 75%; 
 }
@@ -573,7 +581,7 @@ a.btn:nth-child(2)::before{
     width: 55%; 
 }
 
-.portfolio {
+.portfolio{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -582,11 +590,11 @@ a.btn:nth-child(2)::before{
     margin-left: 38px;
 }
 
-.projects {
+.projects{
     margin-left: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr; /* 2 columns layout */
-    grid-gap: 30px; /* Spacing between items */
+    grid-gap: 30px; /* spacing between items */
     max-width: 900px;
     margin: 0px auto;
     padding: 20px;
@@ -594,7 +602,7 @@ a.btn:nth-child(2)::before{
     border-radius: 10px;
 }
 
-.project-img {
+.project-img{
     background-color: var(--bg-color);
     padding: 20px;
     border-radius: 10px;
@@ -602,17 +610,17 @@ a.btn:nth-child(2)::before{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 250px; /* Ensure enough space for content */
-    max-height: 100%; /* Remove any fixed height limit */
+    min-height: 250px; /* ensure enough space for content */
+    max-height: 100%; /* remove any fixed height limit */
 }
 
-.project-img img {
+.project-img img{
     width: 100%; 
     height: auto;
     border-radius: 5px;
     border: 3px solid var(--hover-color);
     box-shadow: 0 0 10px var(--hover-color),
-    0 0 20px var(--hover-color);
+    0 0 15px var(--hover-color);
     transition: transform 0.3s ease-in-out;
 }
 
@@ -628,14 +636,14 @@ a.btn:nth-child(2)::before{
 
 .project-img p {
     color: var(--text-color);
-    word-wrap: break-word;  /* Ensure long words break properly */
-    overflow-wrap: break-word; /* Another way to force word breaks */
+    word-wrap: break-word;  
+    overflow-wrap: break-word; /* another way to force word breaks */
     flex-grow: 1;
     margin-bottom: 15px;
-    white-space: normal; /* Allow multi-line text */
-    text-overflow: unset; /* Remove ellipsis */
+    white-space: normal; /* allow multi-line text */
+    text-overflow: unset; /* remove ellipsis */
 }
 
 .project-img {
-    overflow: visible; /* Make sure content is fully shown */
+    overflow: visible; /* make sure content is fully shown */
 }
