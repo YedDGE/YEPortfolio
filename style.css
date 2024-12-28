@@ -284,6 +284,7 @@ margin: 1rem 0 2rem;
     width: 320px;
     height: 45px;
 }
+
 /* button glow */
 .btn-box a.btn{
     background: var(--hover-color);
@@ -301,7 +302,7 @@ margin: 1rem 0 2rem;
     border-radius: 5px;
     position: relative;
     overflow: hidden;
-    z-index: 1;
+    z-index: 0;
     border: 2px solid var(--hover-color);
 }
 
@@ -319,6 +320,10 @@ a.btn#download-cv:hover{
 
 a.btn#read-more:hover{
     color: var(--hover-color);
+}
+
+a.btn#send-mess:hover{
+    color: var(--bg-color);
 }
 
 a.btn::before {
@@ -565,19 +570,19 @@ a.btn:nth-child(2)::before{
 }
 
 /* width for each skill bar */
-.skill-bar .bar span[data-skill="html"] {
+.skill-bar .bar span[data-skill="html"]{
     width: 75%; 
 }
 
-.skill-bar .bar span[data-skill="css"] {
+.skill-bar .bar span[data-skill="css"]{
     width: 80%; 
 }
 
-.skill-bar .bar span[data-skill="javascript"] {
+.skill-bar .bar span[data-skill="javascript"]{
     width: 60%; 
 }
 
-.skill-bar .bar span[data-skill="python"] {
+.skill-bar .bar span[data-skill="python"]{
     width: 55%; 
 }
 
@@ -628,13 +633,13 @@ a.btn:nth-child(2)::before{
     transform: scale(1.05);
 }
 
-.project-img h2 {
+.project-img h2{
     margin-top: 10px;
     color: var(--hover-color);
     margin-bottom: 10px;
 }
 
-.project-img p {
+.project-img p{
     color: var(--text-color);
     word-wrap: break-word;  
     overflow-wrap: break-word; /* another way to force word breaks */
@@ -644,6 +649,99 @@ a.btn:nth-child(2)::before{
     text-overflow: unset; /* remove ellipsis */
 }
 
-.project-img {
+.project-img{
     overflow: visible; /* make sure content is fully shown */
+}
+
+/* --- Contact segment --- */
+.contact{
+    background: var(--secon-bg-color);
+    width: 100%;
+}
+
+.contact form{
+    text-align: center;
+    max-width: 50rem;
+    margin: 1rem auto;
+    margin-bottom: 3rem;
+}
+
+.contact form input,
+.contact form textarea{
+    width: 100%;
+    color: var(--text-color);
+    background: var(--bg-color);
+    margin-bottom: .8rem;
+    border: none;
+    border-radius: 5px;
+    padding: .7rem;
+}
+
+.contact form textarea{
+    resize: none;
+}
+
+.formBtn{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-box .btn{
+    color: var(--bg-color);
+    width: 150px;
+    height: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: .6s;
+    box-shadow: var(--neon-box-shadow);
+    border-radius: 5px;
+    position: relative;
+    z-index: 0;
+    border: 2px solid var(--hover-color);
+}
+
+.btn:hover{
+    box-shadow: 0 0 15px rgba(101, 202, 47, 0.8), 0 0 30px rgba(101, 202, 47, 0.6);
+}
+
+.btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    background: var(--hover-color);
+    width: 0;
+    height: 100%;
+    transition: width 0.3s;
+}
+
+#send-mess{
+    font-family: "Lexend Deca", sans-serif;
+    color: var(--hover-color);
+    background: var(--bg-color);
+}
+
+a.btn#send-mess:hover::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; /* Full height */
+    z-index: 1; /* Place behind the text */
+    transition: width 0.3s ease; /* Smooth animation */
+}
+
+#send-mess:hover{
+    color: var(--bg-color);
+}
+
+
+.btn:hover::before{
+    color: var(--bg-color);
+    width: 100%;
+    z-index: -1;
 }
